@@ -1,0 +1,6 @@
+# Ignore sensitive information
+.env
+**/secrets/
+*.log
+*.swp
+.DS_Store
