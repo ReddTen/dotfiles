@@ -133,10 +133,17 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_enable_diagnostic_signs = 1
 let g:ycm_enable_diagnostic_highlighting = 1
 let g:ycm_always_populate_location_list = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_key_list_select_completion = ['<Tab>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<S-Tab>', '<Up>']
 let g:ycm_key_list_stop_completion = ['<Enter>']
-
+let g:ycm_semantic_triggers = {
+    \ 'c,cpp,objc': [ 're!\w{2}', '_' ],
+    \ }
 " NERDTree Configuration
 nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
