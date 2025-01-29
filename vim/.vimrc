@@ -111,15 +111,22 @@ Plug 'preservim/tagbar'
 
 " Color scheme (choose one)
 " Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-" Plug 'joshdick/onedark.vim'
+" Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 set background=dark
 set termguicolors
-let g:gruvbox_contrast_dark = 'medium'
-colorscheme molokai
+" Enable true color support
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+" let g:gruvbox_contrast_dark = 'medium'
+syntax on
+colorscheme onedark
 set cursorline
 highlight CursorLine guibg=#3c3836
 
@@ -156,7 +163,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 " Airline Configuration
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dark'
+let g:airline_theme='onedark'
 
 " ALE Configuration
 let g:ale_linters = {
